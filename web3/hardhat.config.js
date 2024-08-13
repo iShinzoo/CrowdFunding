@@ -4,6 +4,14 @@ require("@matterlabs/hardhat-zksync-solc");
 module.exports = {
   zksolc: {
     version: "1.3.9",
+    defaultNetwork: "polygon",
+    networks: {
+      hardhat: {},
+      polygon: {
+        url: 'https://rpc-amoy.polygon.technology/',
+        accounts: [`0x${process.env.PRIVATE_KEY}`]
+      }
+    },
     compilerSource: "binary",
     settings: {
       optimizer: {
